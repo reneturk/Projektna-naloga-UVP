@@ -71,3 +71,19 @@ def poenostavi(sez):
             while sez[i][-1] == ' ' or sez[i][-1] == '\n':
                 sez[i] = sez[i][:(-1)]
     return sez
+
+#odstrani ' €' in '.' iz podatkov, da so primerni za kasnejšo obdelavo
+def odstrani_cene(sez):
+    for i in range(len(sez)):
+        if ' €' in sez[i]:
+            sez[i] = sez[i][:(-2)]
+        if '.' in sez[i]:
+            sez[i] = sez[i].replace('.','')
+    return sez
+
+#odstrani 'km', 'KM' iz podatkov, da so primerni za kasnejšo obdelavo
+def odstrani_enote(sez):
+    for i in range(len(sez)):
+        if 'km' in sez[i] or 'KM' in sez[i]:
+            sez[i] = sez[i][:(-3)]
+    return sez
