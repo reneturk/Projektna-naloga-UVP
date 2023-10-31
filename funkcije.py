@@ -87,3 +87,12 @@ def odstrani_enote(sez):
         if 'km' in sez[i] or 'KM' in sez[i]:
             sez[i] = sez[i][:(-3)]
     return sez
+
+#funkcija, ki iz sortiranega seznama vzame po eno vrednost vsake vrednosti
+#npr. [2003, 2004, 2004, 2005, 2005, 2005, 2005, 2006, 2006, 2007] --> [2003, 2004, 2005, 2006, 2007]
+def vzemi_po_eno(sez):
+    nov_seznam = []
+    for element in sez:
+        if nov_seznam == [] or element != nov_seznam[-1]:
+            nov_seznam.append(element)
+    return nov_seznam
